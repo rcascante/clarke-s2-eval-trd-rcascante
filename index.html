@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="css/main.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+  <title>Adivina el número</title>
+</head>
+<body>
+  <section class="main-content">
+    <div class="main-form">
+      <div class="introduction">
+        <h1 class="main-title">Adivina el número</h1>
+        <h2 id="trials" class="trialsDisplay"></h2>
+      </div>
+      <h3>Introduce aquí tu número</h3>
+      <form id="guessInput" name="theform" class="main-form-content">
+          <label for="guessInput" ></label>
+          <div class="number-guess-submit number-guess">
+            <input type="text" name="guessInput" class="input-form-guess" id="guessInput">
+            <input type="button" name="guessSubmit" value="Prueba" id="guessSubmit" class="input-button-guess">
+          </div>
+          <div class="number-guess-saving number-guess">
+            <input type="text" name="fname" id="nameSubmit" class="input-form-savescore">
+            <input type="button" name="saveName" value="Guardar" id="saveName" class="input-button-savescore">
+          </div>
+      </form>
+      <p id="feedBack"></p><br>
+    </div>
+    <div class="history-score-content">
+      <h3 class="score-history">Histórico</h3>
+      <ul class="score">
+      </ul>
+    </div>
+</section>
+
+
+
+
+
+  <body>
+    <script type="text/javascript" src="js/main.js"></script>
+  </body>
+  </html>
