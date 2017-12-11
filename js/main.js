@@ -72,50 +72,36 @@ function buttonEnable () {
 //RESTART GAME
 
 function restartGame () {
-  document.getElementById("guessInput").elements[0].value = "";
+  document.getElementById('myNumber').value = "";
   randomNumber = Math.ceil(Math.random() * 100) + 1;
   buttonEnable ();
   trials = 0;
   trialsDisplay.innerHTML = "";
   feedback.style.color = "#016FB9";
   feedback.innerHTML = "Escribe un número del 1 al 100 y dale a prueba!";
-
-
 }
 
 
 
 // Showing the user messages depending on his answer
 function userAnswer () {
-  var input = document.getElementById("guessInput").elements[0].value;
+  var input = document.getElementById('myNumber').value;
 
-  if (isNaN(input)) { // para indicar al usuario que no se ha equivocado intruduciendo letras
-    feedback.style.color = "#F34213";
-    feedBack.innerHTML = input + "no es un número, por favor introduzca un número del 1 al 100";
-
-    document.getElementById("guessInput").elements[0].value = "";
-    throw new Error ("This is not a number"); // cuando ponemos esto se para el programa
-  }
-
-  else if (parseInt(input) === randomNumber ) {
+if (parseInt(input) === randomNumber) {
     feedback.style.color = "green";
     feedBack.innerHTML = "Felicidades has acertado .Número random es: " + randomNumber;
-    document.getElementById("guessInput").elements[0].value = "";
+    document.getElementById('myNumber').value = "";
     trialInformation ();
     buttonDisable();
-
-
   } else if (parseInt(input) > randomNumber) {
     feedback.style.color = "#F34213";
-    feedBack.innerHTML= "El número introducido es menor. Random es: "+ randomNumber;
-    document.getElementById("guessInput").elements[0].value = "";
+    feedBack.innerHTML= "El número introducido es mayor. Random es: "+ randomNumber;
+    document.getElementById('myNumber').value = "";
     trialInformation ();
-
-
   } else {
     feedback.style.color = "#F34213";
-    feedBack.innerHTML = "El número introducido es mayor. random es: "+ randomNumber;
-    document.getElementById("guessInput").elements[0].value = "";
+    feedBack.innerHTML = "El número introducido es menor. random es: "+ randomNumber;
+    document.getElementById('myNumber').value = "";
     trialInformation ();
   }
 }
@@ -124,18 +110,17 @@ function userAnswer () {
 // Saving the name and score of the user and restarting game
 
 function trackScore() {
-  var userName = document.getElementById("guessInput").elements[2].value;
+  var userName = document.getElementById("nameSubmit").value;
   var trackGameList = {
     name: userName,
     trials: trials,
   }
+  var historicList = '';
   historyGame.push(trackGameList);
-  var list = '';
   for (var i = 0; i < historyGame.length; i++) {
-    list += '<li>' + historyGame[i].name + ' - ' + historyGame[i].trials +
+    historicList += '<li>' + historyGame[i].name + ' - ' + historyGame[i].trials +
             ' intento' + ((historyGame[i].trials > 1) ? 's' : '') + '</li>';
-            // la version cortita para no liarlo mucho con una pijollada
   }
-  score.innerHTML = list;
+  score.innerHTML = historicList;
   restartGame();
 };

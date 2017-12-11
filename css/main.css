@@ -27,6 +27,7 @@ DISTRIBUTION WITH FLEX
 MAIN FORM SECTION
 */
 
+
 .main-form {
   display: flex;
   flex-direction: column;
@@ -59,6 +60,22 @@ color: #F34213;
 /*
 FORM
 */
+/* Webkit browsers Firefox */
+
+#guessInput {
+  padding-right: 5%;
+}
+
+input[type='number'] {
+    -moz-appearance:textfield;
+}
+
+/* Webkit browsers like Safari and Chrome */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
 
 .number-guess-submit {
   display: flex;
@@ -88,6 +105,7 @@ FORM
   display: inline-block;
   border: 2px solid #18181E ;
   color: #18181E;
+  background-color: #fff;
   padding: 8px 40px;
   text-align: center;
   text-decoration: none;
@@ -120,6 +138,7 @@ FORM
   display: inline-block;
   border: 2px solid #016FB9;
   color: #016FB9;
+  background-color: #fff;
   padding: 8px 35px;
   text-align: center;
   text-decoration: none;
