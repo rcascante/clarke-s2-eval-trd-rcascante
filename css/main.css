@@ -35,8 +35,6 @@ MAIN FORM SECTION
   max-width: 60%;
 }
 
-
-
 .introduction {
   display: flex;
 }
@@ -168,7 +166,7 @@ FEEDBACK ABOUT USER GUESSES
 HISTORY SCORE SECTION
 */
 .history-score-content {
-  padding-left: 50px;
+padding-left: 50px;
 padding-right: 150px;
 padding-top: 30px;
 border-left: 2px solid #016FB9;
@@ -181,4 +179,103 @@ border-left: 2px solid #016FB9;
 .score li {
   font-size: 1em;
   padding-left: 0px;
+}
+
+
+/*
+MEDIA QUERIES
+*/
+
+@media screen and (max-width:900px) {
+  .main-content {
+    flex-direction: column;
+    width: 100%;
+    margin: auto;
+    height: 100vh;
+  }
+
+  .main-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 100%;
+    padding-left: 5%;
+    margin-bottom: 20%;
+
+  }
+
+  .main-title {
+    font-size: 3em;
+    margin-bottom: 2.5%;
+    margin-top: 5%;
+  }
+
+  .top-instructions {
+    margin-top: 15%;
+  }
+
+
+
+  .history-score-content {
+  margin-top: 50%;
+  padding-left: 50px;
+  padding-right: 150px;
+  padding-top: 30px;
+  border-left: none;
+  border-top: 2px solid #016FB9;
+  }
+
+}
+
+
+@media screen and (max-width:500px) {
+  .main-title {
+    font-size: 1.75em;
+    margin-bottom: 3%;
+    margin-top: 5%;
+  }
+
+  .introduction {
+    margin-bottom: 20%;
+  }
+
+  .main-form {
+    margin-bottom: 5%;
+  }
+
+  #trials {
+    padding-right: 5%;
+    font-size: 2.5em;
+  }
+
+  .top-instructions {
+    font-size: 0.9em;
+    margin-top: 20%;
+  }
+
+  .input-button-savescore,
+  .input-button-guess {
+    font-size: 1.1em;
+  }
+
+
+
+  #feedBack {
+    max-width: 90%;
+    font-size: 1em;
+    color: #016FB9;
+    margin-bottom: 10%;
+  }
+
+  .input-button-guess {
+    font-family: 0.5em Lato,sans-serif;
+  }
+
+  .history-score-content {
+    margin-top: 10%;
+  }
+
+
+
 }
