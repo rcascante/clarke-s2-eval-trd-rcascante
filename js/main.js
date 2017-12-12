@@ -89,18 +89,18 @@ function userAnswer () {
 
 if (parseInt(input) === randomNumber) {
     feedback.style.color = "green";
-    feedBack.innerHTML = "Felicidades has acertado .Número random es: " + randomNumber;
+    feedBack.innerHTML = "Felicidades has acertado. Número random es: " + randomNumber;
     document.getElementById('myNumber').value = "";
     trialInformation ();
     buttonDisable();
   } else if (parseInt(input) > randomNumber) {
     feedback.style.color = "#F34213";
-    feedBack.innerHTML= "El número introducido es mayor. Random es: "+ randomNumber;
+    feedBack.innerHTML= "El número introducido es mayor.";
     document.getElementById('myNumber').value = "";
     trialInformation ();
   } else {
     feedback.style.color = "#F34213";
-    feedBack.innerHTML = "El número introducido es menor. random es: "+ randomNumber;
+    feedBack.innerHTML = "El número introducido es menor.";
     document.getElementById('myNumber').value = "";
     trialInformation ();
   }
